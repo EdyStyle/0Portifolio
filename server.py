@@ -15,11 +15,11 @@ def my_home():
 @app.route('/<string:page_name>')
 def html_page(page_name):
     lang = request.args.get('lang')
-    
+
     if lang == 'en':
         return render_template(f'en_{page_name}', lang='en')
     else:
-        return render_template(f'{page_name}', lang='pt-BR')
+        return render_template(f'en_{page_name}', lang='en')
 
 
 def write_to_file(data):
